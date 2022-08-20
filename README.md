@@ -44,6 +44,17 @@ public class ResolverConfig extends WebMvcConfigurationSupport {
 }
 ```
 
+### Implementando no Repository
+
+Após adicionar a classe de configuração, precisamos fazer um extends do JpaSpecificationExecutor do pacote org.springframework.data.jpa.repository, para podermos utilizar as specifications em nossas consultas.
+```java
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long>, JpaSpecificationExecutor<Student> {
+
+}
+```
+ 
+
 ## Uso Basico
 
 Aqui temos um exemplo basico de como fazer uma implementação simples com a biblioteca.
